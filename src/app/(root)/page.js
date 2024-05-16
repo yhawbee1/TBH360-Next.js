@@ -1,4 +1,6 @@
+import Episode from "@/components/Episode";
 import HeroSection from "@/components/HeroSection";
+import RecommendedVideos from "@/components/RecommendedVideos";
 import VideoCarousel from "@/components/VideoCarousel";
 
 
@@ -7,6 +9,8 @@ export default function Home() {
     <main className="">
       <HeroSection />
       <VideoCarousel/>
+      <RecommendedVideos/>
+      <Episode/>
     </main>
   );
 }
