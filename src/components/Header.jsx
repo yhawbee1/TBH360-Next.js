@@ -6,8 +6,11 @@ import { Search } from "lucide-react";
 import {AiOutlineMenu} from "react-icons/ai"
 import MobileSidebar from "./MobileSidebar";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+
+  const pathName = usePathname();
 
   const navMenuItems = [
     {
@@ -47,7 +50,7 @@ export default function Header() {
                 key={index}
                 className="hover:text-[#4aaac2] active:text-[#4aaac2]"
               >
-                <Link href={item.path}>{item.name} </Link>
+                <Link className={`${pathName === item.path ? "text-[#4aaac2]" : " "}`} href={item.path}>{item.name} </Link>
               </li>
             ))}
           </ul>
