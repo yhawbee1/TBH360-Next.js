@@ -43,10 +43,9 @@ export default function HeroSection() {
   ];
 
   return (
-    <>
       <Carousel
         plugins={[plugin.current]}
-        className="w-full"
+        className="w-full h-full top-14"
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.play}
       >
@@ -57,7 +56,7 @@ export default function HeroSection() {
                 style={{
                   background: `url(${heroDetail.Image})`,
                   backgroundBlendMode: "multiply",
-                  backgroundColor: "rgba(0, 0, 0, 0.7.5)",
+                  backgroundColor: "rgba(0, 0, 0, 0.75)",
                   backgroundSize: "cover",
                   backgroundPosition: "top center",
                 }}
@@ -77,6 +76,5 @@ export default function HeroSection() {
           ))}
         </CarouselContent>
       </Carousel>
-    </>
   );
 }
