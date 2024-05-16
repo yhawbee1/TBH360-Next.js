@@ -30,13 +30,13 @@ export default function Header() {
 
 
   return (
-    <div className="shadow-md fixed w-full bg-white ">
+    <div className="shadow-md fixed w-full bg-white z-50 ">
       <div className="flex mx-auto justify-between w-[1698px] items-center  align-middle ">
         <div>
           <Image src="/images/logo.png" width={80} height={30} alt="alt" />
         </div>
-        <div>
-          <ul className="flex gap-3">
+        <div className="">
+          <ul className="flex gap-9">
             {navMenuItems.map((item, index) => (
               <li
                 key={index}
