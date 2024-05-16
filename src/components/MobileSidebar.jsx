@@ -11,6 +11,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Search } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 
 export default function MobileSidebar({Links}) {
@@ -33,7 +34,14 @@ export default function MobileSidebar({Links}) {
                     key={index}
                     className="hover:text-[#4aaac2] active:text-[#4aaac2]"
                   >
-                    <Link href={item.path}>{item.name} </Link>
+                    <Link
+                      className={`${
+                        pathName === item.path ? "text-[#4aaac2]" : " "
+                      }`}
+                      href={item.path}
+                    >
+                      {item.name}{" "}
+                    </Link>
                   </li>
                 ))}
               </ul>
