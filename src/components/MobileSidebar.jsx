@@ -15,7 +15,7 @@ import { usePathname } from "next/navigation";
 
 
 export default function MobileSidebar({Links}) {
-
+ const pathName = usePathname();
   return (
     <>
       <Sheet>
