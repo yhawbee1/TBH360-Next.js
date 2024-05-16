@@ -3,6 +3,9 @@
 import {useState} from "react";
 import Image from "next/image";
 import { Search } from "lucide-react";
+import {AiOutlineMenu} from "react-icons/ai"
+import MobileSidebar from "./MobileSidebar";
+import Link from "next/link";
 
 export default function Header() {
 
@@ -26,30 +29,36 @@ export default function Header() {
   
   ]
 
-  const [mobileMenu, setMobileMenu] = useState(false);
 
 
   return (
-    <div className="shadow-md fixed w-full bg-white z-50 ">
-      <div className="flex mx-auto justify-between w-[1698px] items-center  align-middle ">
+    <div className="shadow-md fixed w-screen bg-white z-50 px-5">
+      <div className="flex mx-auto justify-between  items-center align-middle ">
         <div>
           <Image src="/images/logo.png" width={80} height={30} alt="alt" />
         </div>
-        <div className="">
+        <div className="lg:hidden block ">
+          <MobileSidebar Links={navMenuItems}  />
+        </div>
+        <div className="lg:flex hidden ">
           <ul className="flex gap-9">
             {navMenuItems.map((item, index) => (
               <li
                 key={index}
                 className="hover:text-[#4aaac2] active:text-[#4aaac2]"
               >
-                <a href={item.path}>{item.name} </a>
+                <Link href={item.path}>{item.name} </Link>
               </li>
             ))}
           </ul>
         </div>
-        <div className="gap-4 flex ">
+        <div className="gap-4 lg:flex hidden ">
           <div className="border border-[#05C1EF] flex items-center px-2">
-            <input type="text" placeholder="Explore" className="border-none focus:ring-0" />
+            <input
+              type="text"
+              placeholder="Explore"
+              className="border-none focus:ring-0"
+            />
             <button>
               <Search className="text-#05C1EF" />
             </button>
