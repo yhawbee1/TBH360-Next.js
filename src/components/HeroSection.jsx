@@ -57,7 +57,7 @@ export default function HeroSection() {
                 style={{
                   background: `url(${heroDetail.Image})`,
                   backgroundBlendMode: "multiply",
-                  backgroundColor: "rgba(0, 0, 0, 0.7)",
+                  backgroundColor: "rgba(0, 0, 0, 0.7.5)",
                   backgroundSize: "cover",
                   backgroundPosition: "top center",
                 }}
@@ -68,7 +68,7 @@ export default function HeroSection() {
                     {heroDetail.Header}
                   </h1>
                   <p className=" ">{heroDetail.Description}</p>
-                  <button className="bg-[#256790] hover:bg-[#215270] transition-colors rounded-full px-6 py-3">
+                  <button className="bg-[#2567908f] hover:bg-[#215270] transition-colors rounded-full px-6 py-3">
                     Watch Now
                   </button>
                 </div>
