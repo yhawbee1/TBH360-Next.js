@@ -61,20 +61,19 @@ export default function VideoCarousel() {
 
   return (
     <>
-      <div className="bg-tbhgreen mt-10 text-white p-10 ">
+      <div className=" mt-10 text-gray-600 dark:text-white p-10 ">
         <div className="mb-5">
           <h1 className="text-2xl pb-3">Trending</h1>
-          <hr />
+          <hr className="bg-white" />
         </div>
         <div>
           <Carousel
             className="w-full "
             opts={{
               align: "start",
-              loop: true
+              loop: true,
             }}
             plugins={[plugin.current]}
-   
           >
             <CarouselContent className="-ml-1">
               {videoData.map((videoData, index) => (
@@ -90,8 +89,8 @@ export default function VideoCarousel() {
               ))}
             </CarouselContent>
             <div>
-              <CarouselPrevious className="ms-5 text-black" />
-              <CarouselNext className="me-5 text-black" />
+              <CarouselPrevious className="ms-5 text-black dark:text-white" />
+              <CarouselNext className="me-5 text-black dark:text-white" />
             </div>
           </Carousel>
         </div>
