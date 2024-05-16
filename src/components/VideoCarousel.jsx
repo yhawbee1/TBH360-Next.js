@@ -61,7 +61,7 @@ export default function VideoCarousel() {
 
   return (
     <>
-      <div className="bg-tbhgreen mt-20 text-white p-10 ">
+      <div className="bg-tbhgreen mt-10 text-white p-10 ">
         <div className="mb-5">
           <h1 className="text-2xl pb-3">Trending</h1>
           <hr />
@@ -80,7 +80,7 @@ export default function VideoCarousel() {
               {videoData.map((videoData, index) => (
                 <CarouselItem key={index} className=" basis-1/">
                   <Image
-                    className=""
+                    className="rounded-2xl shadow-md hover:scale-95 ease-in-out duration-300"
                     src={videoData.Image}
                     width={300}
                     height={300}
@@ -90,8 +90,8 @@ export default function VideoCarousel() {
               ))}
             </CarouselContent>
             <div>
-              <CarouselPrevious className="ms-5" />
-              <CarouselNext className="me-5" />
+              <CarouselPrevious className="ms-5 text-black" />
+              <CarouselNext className="me-5 text-black" />
             </div>
           </Carousel>
         </div>
