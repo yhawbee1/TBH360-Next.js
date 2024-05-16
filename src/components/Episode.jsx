@@ -61,7 +61,7 @@ export default function Episode() {
 
   return (
     <>
-      <div className="bg-tbhgreen  text-white p-10 ">
+      <div className="dark:text-white text-gray-600 p-10 ">
         <div className="mb-5">
           <h1 className="text-2xl pb-3">New Episode available</h1>
           <hr />
@@ -71,7 +71,7 @@ export default function Episode() {
             className="w-full "
             opts={{
               align: "start",
-              loop: true
+              loop: true,
             }}
             plugins={[plugin.current]}
           >
@@ -89,8 +89,8 @@ export default function Episode() {
               ))}
             </CarouselContent>
             <div>
-              <CarouselPrevious className="ms-5 text-black" />
-              <CarouselNext className="me-5 text-black" />
+              <CarouselPrevious className="ms-5 text-black dark:text-white" />
+              <CarouselNext className="me-5 text-black dark:text-white" />
             </div>
           </Carousel>
         </div>
