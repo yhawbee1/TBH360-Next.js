@@ -60,10 +60,10 @@ export default function HeroSection() {
                   backgroundSize: "cover",
                   backgroundPosition: "top center",
                 }}
-                className="w-screen  h-[80vh] md:h-[60vh] lg:h-[70vh] flex justify-center items-center py-4"
+                className="w-screen h-[70vh] md:h-[60vh] lg:h-[70vh] flex justify-center items-center py-4"
               >
                 <div className="text-center text-white w-[95%]  md:w-[80%] lg:w-[55%] space-y-3 md:space-y-5 lg:space-y-6">
-                  <h1 className="font-bold lg:font-extrabold lg:leading-tight text-3xl md:text-4xl lg:text-5xl">
+                  <h1 className="font-bold lg:font-extrabold lg:leading-tight text-4xl md:text-4xl lg:text-5xl">
                     {heroDetail.Header}
                   </h1>
                   <p className=" ">{heroDetail.Description}</p>
