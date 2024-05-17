@@ -35,12 +35,19 @@ export default function Footer() {
           </div>
           <div className="w-full md:w-auto px-4 md:px-0 ">
             <h1 className="text-xl font-medium text-white mb-3">Other Links</h1>
-            <div className="text-white space-y-3 flex-col flex hover:text ">
-              <Link href="/sign-up"> Register</Link>
-              <Link href="/sign-in"> Login </Link>
-              <Link href="/about"> About Company</Link>
-              <Link href="/cookies"> Cookies </Link>
-              
+            <div className="text-white space-y-3 flex-col flex ">
+              <Link href="/sign-up" className="hover:text-tbhblue ">
+                Register
+              </Link>
+              <Link href="/sign-in" className="hover:text-tbhblue ">
+                Login
+              </Link>
+              <Link href="/about" className="hover:text-tbhblue ">
+                About Company
+              </Link>
+              <Link href="/cookies" className="hover:text-tbhblue ">
+                Cookies
+              </Link>
             </div>
           </div>
           <div className="w-full  px-4 md:px-0 space-y-4 ">
