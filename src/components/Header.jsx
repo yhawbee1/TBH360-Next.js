@@ -68,10 +68,10 @@ export default function Header() {
             <input
               type="text"
               placeholder="Explore"
-              className="border-none focus:ring-0 rounded-full"
+              className="border-none focus:ring-0 bg-transparent rounded-full"
             />
             <button>
-              <Search className="text-#05C1EF" size={20} />
+              <Search className="text-#05C1EF " size={20} />
             </button>
           </div>
           <div className="flex gap-2">
@@ -84,6 +84,9 @@ export default function Header() {
             <button className="border border-[#05C1EF] text-[#05C1EF]  px-5 rounded-full cursor-pointer hover:bg-[#05C1EF] hover:text-white">
               Sign In
             </button>
+          </div>
+          <div className="flex items-center ">
+            <ThemeSwitch />
           </div>
         </div>
       </div>
