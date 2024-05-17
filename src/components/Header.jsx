@@ -7,6 +7,7 @@ import {AiOutlineMenu} from "react-icons/ai"
 import MobileSidebar from "./MobileSidebar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ThemeSwitch from "./ThemeSwitcher";
 
 export default function Header() {
 
@@ -35,7 +36,7 @@ export default function Header() {
 
 
   return (
-    <div className="shadow-md fixed w-screen bg-white z-50 px-5">
+    <div className="shadow-md fixed w-screen bg-white dark:bg-tbhgreen z-50 px-5">
       <div className="flex mx-auto justify-between  items-center align-middle ">
         <div>
           <Image src="/images/logo.png" width={80} height={30} alt="alt" />

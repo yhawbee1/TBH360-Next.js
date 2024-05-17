@@ -51,7 +51,7 @@ export default function MobileSidebar({Links}) {
                 <input
                   type="text"
                   placeholder="Explore"
-                  className="border-none focus:ring-0"
+                  className="border-none bg-transparent focus:ring-0"
                 />
                 <button>
                   <Search className="text-#05C1EF" />

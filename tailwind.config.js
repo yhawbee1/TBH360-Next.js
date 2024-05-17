@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,jsx}",
     "./components/**/*.{js,jsx}",
@@ -18,6 +18,8 @@ module.exports = {
     },
     extend: {
       colors: {
+        tbhgreen: "#093652",
+        tbhblue: "#05C1EF",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -73,8 +75,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/forms"),
-    require("tailwindcss-animate")
-  ],
+  plugins: [require("@tailwindcss/forms"), require("tailwindcss-animate")],
 };

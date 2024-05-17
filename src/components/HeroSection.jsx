@@ -43,7 +43,10 @@ export default function HeroSection() {
   ];
 
   return (
-      <Carousel
+    <Carousel
+      opts={{
+        loop: true,
+      }}
         plugins={[plugin.current]}
         className="w-full h-full top-14"
         onMouseEnter={plugin.current.stop}
@@ -67,7 +70,7 @@ export default function HeroSection() {
                     {heroDetail.Header}
                   </h1>
                   <p className=" ">{heroDetail.Description}</p>
-                  <button className="bg-[#2567908f] hover:bg-[#215270] transition-colors rounded-full px-6 py-3">
+                  <button className="bg-[#2567908f] hover:bg-[#215270] transition-all duration-150 rounded-full px-6 py-3">
                     Watch Now
                   </button>
                 </div>
