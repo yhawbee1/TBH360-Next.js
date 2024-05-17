@@ -51,6 +51,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
+                required
                 className="p-2 rounded"
               />
               <button className="bg-tbhblue p-2 text-white rounded">
