@@ -36,7 +36,7 @@ export default function Header() {
 
 
   return (
-    <div className="shadow-md fixed w-screen bg-white dark:bg-tbhgreen z-50 px-5">
+    <div className="shadow-md fixed w-screen bg-white dark:bg-tbhgreen z-50 px-10">
       <div className="flex mx-auto justify-between  items-center align-middle ">
         <div>
           <Image src="/images/logo.png" width={80} height={30} alt="alt" />
@@ -75,15 +75,16 @@ export default function Header() {
             </button>
           </div>
           <div className="flex gap-2">
-            <button
-              type="button"
-              className="bg-[#05C1EF]  border border-[#05C1EF] px-4 rounded-full hover:bg-transparent text-white hover:text-[#05C1EF]"
+            <Link href="/sign-up"
+            
+              className="bg-[#05C1EF]  border border-[#05C1EF] px-4 rounded-full py-2 hover:bg-transparent text-white hover:text-[#05C1EF]"
             >
               Register
-            </button>
-            <button className="border border-[#05C1EF] text-[#05C1EF]  px-5 rounded-full cursor-pointer hover:bg-[#05C1EF] hover:text-white">
+            </Link>
+            
+            <Link href="/sign-in" className="border border-[#05C1EF] text-[#05C1EF]  px-5 rounded-full cursor-pointer hover:bg-[#05C1EF] hover:text-white py-2">
               Sign In
-            </button>
+            </Link>
           </div>
           <div className="flex items-center ">
             <ThemeSwitch />
