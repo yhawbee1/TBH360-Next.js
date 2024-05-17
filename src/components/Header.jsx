@@ -41,7 +41,7 @@ export default function Header() {
           <Image src="/images/logo.png" width={80} height={30} alt="alt" />
         </div>
         <div className="lg:hidden block ">
-          <MobileSidebar Links={navMenuItems}  />
+          <MobileSidebar Links={navMenuItems} />
         </div>
         <div className="lg:flex hidden ">
           <ul className="flex gap-9">
@@ -50,25 +50,37 @@ export default function Header() {
                 key={index}
                 className="hover:text-[#4aaac2] active:text-[#4aaac2]"
               >
-                <Link className={`${pathName === item.path ? "text-[#4aaac2]" : " "}`} href={item.path}>{item.name} </Link>
+                <Link
+                  className={`${
+                    pathName === item.path ? "text-[#4aaac2]" : " "
+                  }`}
+                  href={item.path}
+                >
+                  {item.name}{" "}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
         <div className="gap-4 lg:flex hidden ">
-          <div className="border border-[#05C1EF] flex items-center px-2">
+          <div className="border border-[#05C1EF] flex items-center px-2 rounded-full">
             <input
               type="text"
               placeholder="Explore"
-              className="border-none focus:ring-0"
+              className="border-none focus:ring-0 rounded-full"
             />
             <button>
-              <Search className="text-#05C1EF" />
+              <Search className="text-#05C1EF" size={20} />
             </button>
           </div>
-          <button className="bg-[#05C1EF]  px-3 text-white rounded-full cursor-pointer hover:bg-[#4aaac2]">
-            Sign Up
-          </button>
+          <div className="flex gap-2">
+            <button className="bg-[#05C1EF]  px-5 text-white rounded-full cursor-pointer hover:bg-white hover:border border-[#05C1EF] hover:text-[#05C1EF]">
+              Register
+            </button>
+            <button className="border border-[#05C1EF] text-[#05C1EF]  px-5 rounded-full cursor-pointer hover:bg-[#4aaac2] hover:text-white">
+              Sign In
+            </button>
+          </div>
         </div>
       </div>
     </div>
