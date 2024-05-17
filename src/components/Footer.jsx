@@ -50,7 +50,7 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Enter your email here"
                 required
                 className="p-2 rounded"
               />
