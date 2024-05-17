@@ -74,10 +74,13 @@ export default function Header() {
             </button>
           </div>
           <div className="flex gap-2">
-            <button className="bg-[#05C1EF]  px-5 text-white rounded-full cursor-pointer hover:bg-white hover:border border-[#05C1EF] hover:text-[#05C1EF]">
+            <button
+              type="button"
+              className="bg-[#05C1EF]  border border-[#05C1EF] px-4 rounded-full hover:bg-transparent text-white hover:text-[#05C1EF]"
+            >
               Register
             </button>
-            <button className="border border-[#05C1EF] text-[#05C1EF]  px-5 rounded-full cursor-pointer hover:bg-[#4aaac2] hover:text-white">
+            <button className="border border-[#05C1EF] text-[#05C1EF]  px-5 rounded-full cursor-pointer hover:bg-[#05C1EF] hover:text-white">
               Sign In
             </button>
           </div>

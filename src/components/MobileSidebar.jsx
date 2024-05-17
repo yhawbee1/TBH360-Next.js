@@ -58,7 +58,10 @@ export default function MobileSidebar({Links}) {
                 </button>
               </div>
               <button className="bg-[#05C1EF]  px-3 text-white rounded-full  w-full mt-5 p-3 cursor-pointer hover:bg-[#4aaac2]">
-                Sign Up
+                Register
+              </button>
+              <button className="bg-[#05C1EF]  px-3 text-white rounded-full  w-full mt-5 p-3 cursor-pointer hover:bg-[#4aaac2]">
+                Sign In
               </button>
             </div>
           </div>
