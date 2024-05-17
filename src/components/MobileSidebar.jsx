@@ -57,12 +57,21 @@ export default function MobileSidebar({Links}) {
                   <Search className="text-#05C1EF" />
                 </button>
               </div>
-              <button className="bg-[#05C1EF]  px-3 text-white rounded-full  w-full mt-5 p-3 cursor-pointer hover:bg-[#4aaac2]">
-                Register
-              </button>
-              <button className="bg-[#05C1EF]  px-3 text-white rounded-full  w-full mt-5 p-3 cursor-pointer hover:bg-[#4aaac2]">
-                Sign In
-              </button>
+              <div className="mt-4 flex flex-col gap-3">
+                <Link
+                  href="/sign-up"
+                  className="bg-[#05C1EF] text-center border border-[#05C1EF] px-4 rounded-full py-2 hover:bg-transparent text-white hover:text-[#05C1EF]"
+                >
+                  Register
+                </Link>
+
+                <Link
+                  href="/sign-in"
+                  className="border border-[#05C1EF] text-[#05C1EF] text-center  px-5 rounded-full cursor-pointer hover:bg-[#05C1EF] hover:text-white py-2"
+                >
+                  Sign In
+                </Link>
+              </div>
             </div>
           </div>
         </SheetContent>
