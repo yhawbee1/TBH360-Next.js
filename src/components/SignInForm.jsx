@@ -62,7 +62,7 @@ export default function SignInForm() {
           {...field}
           type={viewPassword ? "text" : "password"}
           placeholder="Enter your password"
-          className="border active:border-0 rounded-e-none bg-transparent dark:text-gray dark:bg-transparent  "
+          className="border active:border-0 rounded-e-none  dark:text-gray dark:bg-transparent  "
         />
         {viewPassword ? (
           <EyeOffIcon
@@ -81,22 +81,25 @@ export default function SignInForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2 md:space-y-5">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-2 md:space-y-5"
+      >
         <FormField
           control={form.control}
           name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel className="dark:text-white">Username</FormLabel>
               <FormControl>
                 <Input
                   {...field}
                   type="text"
                   placeholder="Enter your username"
-                  className="border-1 border-white active:border-0  bg-transparent dark:text-gray dark:bg-transparent"
+                  className="border-1 dark:border-white active:border-0   bg-white dark:text-gray dark:bg-transparent"
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="dark:text-red-200" />
             </FormItem>
           )}
         />
@@ -105,16 +108,20 @@ export default function SignInForm() {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel className="dark:text-white">Password</FormLabel>
               <FormControl>
                 <PasswordToggle field={field} />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="dark:text-red-200" />
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full mt-4 dark:bg-tbhblue dark:text-white text-lg  hover:bg-tbhgreen cursor-pointer " disabled={isLoading} >
-         {isLoading ? "Loading..." : "Sign In"}
+        <Button
+          type="submit"
+          className="w-full mt-4 dark:bg-tbhblue dark:text-white text-lg  hover:bg-tbhgreen cursor-pointer "
+          disabled={isLoading}
+        >
+          {isLoading ? "Loading..." : "Sign In"}
         </Button>
       </form>
     </Form>
