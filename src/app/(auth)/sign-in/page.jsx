@@ -17,7 +17,7 @@ const SignUp = () => {
             allow="autoplay; encrypted-media"
           ></iframe>
         </div>
-        <div className="md:w-[50%] place-items-center flex p-[10%] bg-gray-200 h-screen ">
+        <div className="md:w-[50%] place-items-center flex p-[10%] bg-gray-200 h-screen dark:bg-[#020817]  ">
           <div className="space-y-5">
             <div>
               <Link href="/">
@@ -26,8 +26,10 @@ const SignUp = () => {
                   size={50}
                 />
               </Link>
-              <h1 className="text-tbhgreen text-4xl mb-8">Sign In</h1>
-              <p className="text-black  ">
+              <h1 className="dark:text-white text-tbhgreen text-4xl mb-8">
+                Sign In
+              </h1>
+              <p className="">
                 Over 10 million users connect with the THE TBH360 community, and
                 their happy faces tell the story.
               </p>
@@ -36,7 +38,7 @@ const SignUp = () => {
             <div></div>
 
             <div className="space-y-4 justify-center items-center flex flex-col">
-              <h1 className="text-black ">or Sign in with</h1>
+              <h1 className="dark:text-white text-black">or Sign in with</h1>
               <div className="flex gap-4  w-full">
                 <Link
                   href="/"
@@ -68,8 +70,10 @@ const SignUp = () => {
                   className="flex items-center gap-4 text-tbhgreen pt-8 cursor-pointer hover:text-tbhblue"
                   href="/sign-up"
                 >
-                  <h1>Create An Account</h1>
-                  <FaArrowRightLong />
+                  <h1 className="dark:text-white text-black ">
+                    Create An Account
+                  </h1>
+                  <FaArrowRightLong className="dark:text-white text-black " />
                 </Link>
               </div>
             </div>

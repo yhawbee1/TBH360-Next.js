@@ -47,22 +47,22 @@ export default function SignInForm() {
     };
 
     return (
-      <div className="flex justify-between items-center bg-white rounded-md">
+      <div className="flex justify-between items-center bg-white dark:bg-transparent rounded-md dark:border-white dark:border">
         <Input
           {...field}
           type={viewPassword ? "text" : "password"}
           placeholder="Enter your password"
-          className="border border-0 active:border-0 rounded-e-none bg-transparent"
+          className="border border-0 active:border-0 rounded-e-none bg-transparent dark:text-gray dark:bg-transparent  "
         />
         {viewPassword ? (
           <EyeOffIcon
             onClick={togglePasswordVisibility}
-            className="h-10 rounded-e-md w-8 cursor-pointer mx-2 text-lg"
+            className="h-10 rounded-e-md w-8 cursor-pointer mx-2 text-lg dark:text-gray-500"
           />
         ) : (
           <EyeIcon
             onClick={togglePasswordVisibility}
-            className="h-10 rounded-e-md w-8 cursor-pointer mx-2 text-lg"
+            className="h-10 rounded-e-md w-8 cursor-pointer mx-2 text-lg dark:text-gray-500"
           />
         )}
       </div>
@@ -71,7 +71,7 @@ export default function SignInForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2 md:space-y-5">
         <FormField
           control={form.control}
           name="username"
@@ -83,6 +83,7 @@ export default function SignInForm() {
                   {...field}
                   type="text"
                   placeholder="Enter your username"
+                  className="dark:text-gray-100 dark:bg-transparent"
                 />
               </FormControl>
               <FormMessage />
@@ -102,7 +103,7 @@ export default function SignInForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full">
+        <Button type="submit" className="w-full mt-4 dark:bg-tbhblue dark:text-white text-lg  hover:bg-tbhgreen cursor-pointer ">
           Sign In
         </Button>
       </form>
