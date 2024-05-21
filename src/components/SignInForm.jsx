@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -23,8 +22,8 @@ const formSchema = z.object({
   username: z.string().min(2, {
     message: "Username must be at least 2 characters."
   }),
-  password: z.string().min(6, {
-    message: "Password must be at least 6 characters."
+  password: z.string().min(8, {
+    message: "Password must be at least 8 characters."
   })
 });
 
@@ -63,7 +62,7 @@ export default function SignInForm() {
           {...field}
           type={viewPassword ? "text" : "password"}
           placeholder="Enter your password"
-          className="border border-0 active:border-0 rounded-e-none bg-transparent dark:text-gray dark:bg-transparent  "
+          className="border active:border-0 rounded-e-none bg-transparent dark:text-gray dark:bg-transparent  "
         />
         {viewPassword ? (
           <EyeOffIcon
@@ -94,7 +93,7 @@ export default function SignInForm() {
                   {...field}
                   type="text"
                   placeholder="Enter your username"
-                  className="dark:text-gray-100 dark:bg-transparent"
+                  className="border-1 border-white active:border-0  bg-transparent dark:text-gray dark:bg-transparent"
                 />
               </FormControl>
               <FormMessage />
