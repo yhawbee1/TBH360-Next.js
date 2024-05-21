@@ -15,7 +15,9 @@ import {
   FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { EyeIcon, EyeOffIcon } from "lucide-react"; // Import both icons
+import { EyeIcon, EyeOffIcon } from "lucide-react"; 
+import { useRouter } from "next/navigation";
+
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -35,8 +37,17 @@ export default function SignInForm() {
     }
   });
 
+ 
+
+  const [isLoading , setIsLoading] = useState(false)
+
+  const router = useRouter()
+
   function onSubmit(values) {
+    setIsLoading(true)
     console.log(values);
+    // setIsLoading(false)
+    router.push('/admin');
   }
 
   const PasswordToggle = ({ field }) => {
@@ -103,8 +114,8 @@ export default function SignInForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full mt-4 dark:bg-tbhblue dark:text-white text-lg  hover:bg-tbhgreen cursor-pointer ">
-          Sign In
+        <Button type="submit" className="w-full mt-4 dark:bg-tbhblue dark:text-white text-lg  hover:bg-tbhgreen cursor-pointer " disabled={isLoading} >
+         {isLoading ? "Loading..." : "Sign In"}
         </Button>
       </form>
     </Form>
