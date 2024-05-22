@@ -1,9 +1,9 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
-import { useState } from "react";
+import { useState, useRef, useEffect, forwardRef } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -14,9 +14,8 @@ import {
   FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { EyeIcon, EyeOffIcon } from "lucide-react"; 
+import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -27,6 +26,44 @@ const formSchema = z.object({
   })
 });
 
+const PasswordToggle = forwardRef(({ field }, ref) => {
+  const [viewPassword, setViewPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setViewPassword((prevState) => !prevState);
+  };
+
+  useEffect(() => {
+    if (ref && ref.current) {
+      ref.current.focus();
+    }
+  }, [viewPassword, ref]);
+
+  return (
+    <div className="flex justify-between items-center bg-white dark:bg-transparent rounded-md dark:border-white dark:border">
+      <Input
+        {...field}
+        ref={ref}
+        type={viewPassword ? "text" : "password"}
+        placeholder="Enter your password"
+        className="border active:border-0 rounded-e-none dark:text-gray dark:bg-transparent"
+      />
+      {viewPassword ? (
+        <EyeOffIcon
+          onClick={togglePasswordVisibility}
+          className="h-10 rounded-e-md w-8 cursor-pointer mx-2 text-lg dark:text-gray-500"
+        />
+      ) : (
+        <EyeIcon
+          onClick={togglePasswordVisibility}
+          className="h-10 rounded-e-md w-8 cursor-pointer mx-2 text-lg dark:text-gray-500"
+        />
+      )}
+    </div>
+  );
+});
+PasswordToggle.displayName = "PasswordToggle";
+
 export default function SignInForm() {
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -36,48 +73,16 @@ export default function SignInForm() {
     }
   });
 
- 
+  const [isLoading, setIsLoading] = useState(false);
 
-  const [isLoading , setIsLoading] = useState(false)
-
-  const router = useRouter()
+  const router = useRouter();
 
   function onSubmit(values) {
-    setIsLoading(true)
+    setIsLoading(true);
     console.log(values);
-    // setIsLoading(false)
-    router.push('/admin');
+    // Handle sign-in logic here
+    router.push("/admin");
   }
-
-  const PasswordToggle = ({ field }) => {
-    const [viewPassword, setViewPassword] = useState(false);
-
-    const togglePasswordVisibility = () => {
-      setViewPassword((prevState) => !prevState);
-    };
-
-    return (
-      <div className="flex justify-between items-center bg-white dark:bg-transparent rounded-md dark:border-white dark:border">
-        <Input
-          {...field}
-          type={viewPassword ? "text" : "password"}
-          placeholder="Enter your password"
-          className="border active:border-0 rounded-e-none  dark:text-gray dark:bg-transparent  "
-        />
-        {viewPassword ? (
-          <EyeOffIcon
-            onClick={togglePasswordVisibility}
-            className="h-10 rounded-e-md w-8 cursor-pointer mx-2 text-lg dark:text-gray-500"
-          />
-        ) : (
-          <EyeIcon
-            onClick={togglePasswordVisibility}
-            className="h-10 rounded-e-md w-8 cursor-pointer mx-2 text-lg dark:text-gray-500"
-          />
-        )}
-      </div>
-    );
-  };
 
   return (
     <Form {...form}>
@@ -96,7 +101,7 @@ export default function SignInForm() {
                   {...field}
                   type="text"
                   placeholder="Enter your username"
-                  className="border-1 dark:border-white active:border-0   bg-white dark:text-gray dark:bg-transparent"
+                  className="border-1 dark:border-white active:border-0 bg-white dark:text-gray dark:bg-transparent"
                 />
               </FormControl>
               <FormMessage className="dark:text-red-200" />
@@ -110,7 +115,11 @@ export default function SignInForm() {
             <FormItem>
               <FormLabel className="dark:text-white">Password</FormLabel>
               <FormControl>
-                <PasswordToggle field={field} />
+                <Controller
+                  name="password"
+                  control={form.control}
+                  render={({ field }) => <PasswordToggle field={field} />}
+                />
               </FormControl>
               <FormMessage className="dark:text-red-200" />
             </FormItem>
@@ -118,7 +127,7 @@ export default function SignInForm() {
         />
         <Button
           type="submit"
-          className="w-full mt-4 dark:bg-tbhblue dark:text-white text-lg  hover:bg-tbhgreen cursor-pointer "
+          className="w-full mt-4 dark:bg-tbhblue dark:text-white text-lg hover:bg-tbhgreen cursor-pointer"
           disabled={isLoading}
         >
           {isLoading ? "Loading..." : "Sign In"}
