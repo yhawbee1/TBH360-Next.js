@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
+import { movieData } from "@/app/db/movieData";
 
 export default function VideoCarousel() {
   const videoData = [
@@ -71,20 +72,24 @@ export default function VideoCarousel() {
             className="w-full "
             opts={{
               align: "start",
-              loop: true,
+              loop: true
             }}
             plugins={[plugin.current]}
           >
             <CarouselContent className="-ml-1">
-              {videoData.map((videoData, index) => (
-                <CarouselItem key={index} className=" basis-1/">
-                  <Image
-                    className="rounded-2xl shadow-md hover:scale-95 ease-in-out duration-300"
-                    src={videoData.Image}
-                    width={300}
-                    height={300}
-                    alt={videoData.Title}
-                  />
+              {movieData.map((videoData, index) => (
+                <CarouselItem key={index} className=" basis-1/ ">
+                  <div
+                    className="relative h-[537.15px] w-[320px] rounded-lg flex items-end text-white overflow-hidden"
+                    style={{
+                      backgroundImage: `url("${videoData.image}")`,
+                      backgroundSize: "cover",
+                      borderImage:"fill 0 linear-gradient(#0003,#000) 10",
+                      borderRadius: "30px",
+                    }}
+                  >
+                    <h1 className="text-2xl p-3 ">{videoData.title}</h1>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>

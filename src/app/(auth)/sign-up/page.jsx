@@ -1,3 +1,4 @@
+import SignUpForm from "@/components/SignUpForm";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -12,7 +13,6 @@ const SignUp = () => {
           <iframe
             className="video-background w-[100%] "
             src="https://www.youtube.com/embed/Hgg7M3kSqyE?autoplay=1&mute=1&loop=1&playlist=Hgg7M3kSqyE&controls=0&showinfo=0&modestbranding=1"
-            frameborder="0"
             allow="autoplay; encrypted-media"
           ></iframe>
         </div>
@@ -34,29 +34,31 @@ const SignUp = () => {
               </p>
             </div>
 
-            <div>{/* Contact Form */}</div>
+            <div>
+              <SignUpForm />
+            </div>
 
-            <div className="space-y-4">
-              <h1 className="text-black ">Or you can signup with</h1>
-              <div className="flex gap-4 ">
+            <div className="space-y-4 justify-center items-center flex flex-col">
+              <h1 className="dark:text-white text-black">or Sign in with</h1>
+              <div className="flex gap-4  w-full">
                 <Link
                   href="/"
-                  className="bg-white text-black shadow-sm p-3 flex items-center gap-3 rounded-sm"
+                  className="bg-white text-black shadow-sm p-2 flex items-center gap-3 rounded-sm w-[50%] justify-center"
                 >
                   <Image
-                    src="/images/google.png"
-                    height={30}
-                    width={30}
+                    src="/images/google.svg"
+                    height={25}
+                    width={25}
                     alt="google"
                   />
                   <span>Google</span>
                 </Link>
                 <Link
                   href="/"
-                  className="bg-white text-black shadow-sm p-3 flex items-center gap-3 rounded-sm "
+                  className="bg-white text-black shadow-sm p-2 flex items-center gap-3 w-[50%] rounded-sm justify-center"
                 >
                   <Image
-                    src="/images/facebook.png"
+                    src="/images/facebook.svg"
                     height={30}
                     width={30}
                     alt="facebook"
@@ -67,10 +69,12 @@ const SignUp = () => {
               <div>
                 <Link
                   className="flex items-center gap-4 text-tbhgreen pt-8 cursor-pointer hover:text-tbhblue"
-                  href="/sign-in"
+                  href="/sign-up"
                 >
-                  <h1>Sign In</h1>
-                  <FaArrowRightLong />
+                  <h1 className="dark:text-white text-black ">
+                    Create An Account
+                  </h1>
+                  <FaArrowRightLong className="dark:text-white text-black " />
                 </Link>
               </div>
             </div>
