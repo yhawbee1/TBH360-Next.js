@@ -13,7 +13,6 @@ const SignUp = () => {
           <iframe
             className="video-background w-[100%]"
             src="https://www.youtube.com/embed/Hgg7M3kSqyE?autoplay=1&mute=1&loop=1&playlist=Hgg7M3kSqyE&controls=0&showinfo=0&modestbranding=1"
-            frameborder="0"
             allow="autoplay; encrypted-media"
           ></iframe>
         </div>
