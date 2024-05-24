@@ -70,10 +70,10 @@ const SignUp = () => {
               <div>
                 <Link
                   className="flex items-center gap-4 text-tbhgreen pt-8 cursor-pointer hover:text-tbhblue"
-                  href="/sign-up"
+                  href="/sign-in"
                 >
                   <h1 className="dark:text-white text-black ">
-                    Create An Account
+                    Sign In
                   </h1>
                   <FaArrowRightLong className="dark:text-white text-black " />
                 </Link>

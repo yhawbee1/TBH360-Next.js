@@ -36,15 +36,15 @@ export default function Header() {
 
 
   return (
-    <div className="shadow-md fixed w-screen bg-white dark:bg-tbhgreen z-50 px-10">
-      <div className="flex mx-auto justify-between  items-center align-middle ">
+    <header className="shadow-md w-full bg-white dark:bg-tbhgreen z-50 px-10">
+      <nav className="flex mx-auto justify-between  items-center align-middle ">
         <div>
           <Image src="/images/logo.png" width={80} height={30} alt="alt" />
         </div>
         <div className="lg:hidden block ">
           <MobileSidebar Links={navMenuItems} />
         </div>
-        <div className="lg:flex hidden ">
+        <section className="lg:flex hidden ">
           <ul className="flex gap-9">
             {navMenuItems.map((item, index) => (
               <li
@@ -62,7 +62,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
-        </div>
+        </section>
         <div className="gap-4 lg:flex hidden ">
           <div className="border border-[#05C1EF] flex items-center px-2 rounded-full">
             <input
@@ -90,7 +90,7 @@ export default function Header() {
             <ThemeSwitch />
           </div>
         </div>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 }

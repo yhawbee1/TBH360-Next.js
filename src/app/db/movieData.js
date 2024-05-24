@@ -5,6 +5,7 @@ export const movieData = [
     image: "https://images.unsplash.com/photo-1515169067868-5387ec356754?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fG1vdmllfGVufDB8fHx8MTY2Mzc3NjcyOQ&ixlib=rb-1.2.1&q=80&w=400",
     date: "2010-07-16",
     description: "A skilled thief is given a chance at redemption if he can successfully perform inception.",
+    video:"https://www.youtube.com/embed/cW8VLC9nnTo?si=gjIVnhBfy8fy8UBY",
     likes: 34,
     user: {
       id: 1,

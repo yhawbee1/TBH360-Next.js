@@ -48,7 +48,7 @@ export default function HeroSection() {
         loop: true,
       }}
         plugins={[plugin.current]}
-        className="w-full h-full top-14"
+        className="w-full h-full "
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.play}
       >
