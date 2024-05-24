@@ -36,14 +36,13 @@ export default function Header() {
 
 
   return (
-    <div className="shadow-md fixed w-screen bg-white dark:bg-tbhgreen z-50 px-5">
+    <div className="shadow-md fixed w-screen bg-white dark:bg-tbhgreen z-50 px-10">
       <div className="flex mx-auto justify-between  items-center align-middle ">
         <div>
           <Image src="/images/logo.png" width={80} height={30} alt="alt" />
         </div>
-        <div className="lg:hidden flex items-center gap-2">
+        <div className="lg:hidden block ">
           <MobileSidebar Links={navMenuItems} />
-          <ThemeSwitch  />
         </div>
         <div className="lg:flex hidden ">
           <ul className="flex gap-9">
@@ -52,26 +51,44 @@ export default function Header() {
                 key={index}
                 className="hover:text-[#4aaac2] active:text-[#4aaac2]"
               >
-                <Link className={`${pathName === item.path ? "text-[#4aaac2]" : " "}`} href={item.path}>{item.name} </Link>
+                <Link
+                  className={`${
+                    pathName === item.path ? "text-[#4aaac2]" : " "
+                  }`}
+                  href={item.path}
+                >
+                  {item.name}{" "}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
-        <div className="gap-4 lg:flex hidden items-center">
-          <div className="border border-[#05C1EF] flex items-center px-2">
+        <div className="gap-4 lg:flex hidden ">
+          <div className="border border-[#05C1EF] flex items-center px-2 rounded-full">
             <input
               type="text"
               placeholder="Explore"
-              className="border-none focus:ring-0 bg-transparent"
+              className="border-none focus:ring-0 bg-transparent rounded-full"
             />
             <button>
-              <Search className="text-#05C1EF" />
+              <Search className="text-#05C1EF " size={20} />
             </button>
           </div>
-          <button className="bg-[#05C1EF]  px-4 py-2.5 text-white rounded-full cursor-pointer hover:bg-[#4aaac2]">
-            Sign Up
-          </button>
-          <ThemeSwitch  />
+          <div className="flex gap-2">
+            <Link href="/sign-up"
+            
+              className="bg-[#05C1EF]  border border-[#05C1EF] px-4 rounded-full py-2 hover:bg-transparent text-white hover:text-[#05C1EF]"
+            >
+              Register
+            </Link>
+            
+            <Link href="/sign-in" className="border border-[#05C1EF] text-[#05C1EF]  px-5 rounded-full cursor-pointer hover:bg-[#05C1EF] hover:text-white py-2">
+              Sign In
+            </Link>
+          </div>
+          <div className="flex items-center ">
+            <ThemeSwitch />
+          </div>
         </div>
       </div>
     </div>
