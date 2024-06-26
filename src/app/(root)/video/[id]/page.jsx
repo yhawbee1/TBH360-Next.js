@@ -20,41 +20,62 @@ export default async function Page({ params }) {
 
   return (
     <section className="w-full p-10 ">
-      <iframe
-        src={video.video}
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
+      <div className="w-full ">
+        <iframe
+          className="w-full  rounded-md"
+          src={video.video}
+          title="YouTube video player"
+          frameborder="0"
+          width="100"
+          height="700"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div className="bg-tbhgreen rounded-md p-4 my-4 flex ">
+        
+        <div className="flex space-x-4 w-[50%]">
+          <div>
+            <Image
+              src={video.user.image}
+              alt={video.user.name}
+              width={30}
+              height={30}
+              className="rounded-full"
+            />
+          </div>
+          <div>
+            <p className="text-lg font-semibold text-white">
+              {video.user.name}
+            </p>
+            <p className="text-sm text-gray-300">
+              {video.user.subscribers} subscribers
+            </p>
+          </div>
+            <button className="border rounded-3xl px-4 mr-4 text-white">
+              Subscribe
+            </button>
+        </div>
+        
+        <div className="bg-tbhblue/40 w-[50%] p-3 rounded-md ">
+          <div className="flex justify-between ">
+            <h1>5,000 Comments</h1>
+            <h1>Add Comment</h1>
+          </div>
+          <hr />
+          <div>
+            <Image
+            ></Image>
+          </div>
+        </div>
 
-      <h1 className="text-4xl font-bold mt-4">{video.title}</h1>
-      <p className="text-xl mt-2">{video.description}</p>
-      <div className="mt-4">
-        <Image
-          src={video.user.image}
-          alt={video.user.name}
-          width={50}
-          height={50}
-          className="rounded-full"
-        />
+        {/* <h1 className="text-4xl font-bold mt-4">{video.title}</h1>
+        <p className="text-xl mt-2">{video.description}</p>
         <p className="text-lg font-semibold">{video.user.name}</p>
         <p className="text-sm text-gray-600">
           {video.user.subscribers} subscribers
-        </p>
-      </div>
-      <div className="mt-4">
-        <Image
-          src={video.user.comment.image}
-          alt={video.user.comment.name}
-          width={50}
-          height={50}
-          className="rounded-full"
-        />
-        <p className="text-lg font-semibold">{video.user.comment.name}</p>
-        <p className="text-sm text-gray-600">{video.user.comment.date}</p>
-        <p className="text-md mt-2">{video.user.comment.comment}</p>
+        </p> */}
       </div>
     </section>
   );

@@ -57,7 +57,7 @@ export default function Header() {
                   }`}
                   href={item.path}
                 >
-                  {item.name}{" "}
+                  {item.name}
                 </Link>
               </li>
             ))}

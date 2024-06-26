@@ -10,7 +10,7 @@ export const movieData = [
     user: {
       id: 1,
       name: "Christopher Nolan",
-      image: "https://images.unsplash.com/photo-1531895861208-8503d7270d34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDE0fHxwcm9maWxlfGVufDB8fHx8MTY2Mzc3Njc1NQ&ixlib=rb-1.2.1&q=80&w=400",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDE2fHxwcm9maWxlfGVufDB8fHx8MTY2Mzc3Njc1OQ&ixlib=rb-1.2.1&q=80&w=400",
       subscribers: "5M",
       comment: {
         id: 1,
